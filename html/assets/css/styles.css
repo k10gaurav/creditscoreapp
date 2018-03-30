@@ -130,7 +130,7 @@
 	}
 .status-ok{
 	color:#ffffff;
-	background-color: #3dd07d;
+	background-color: green;
 }
 .status-fail{
 	color:#ffffff;

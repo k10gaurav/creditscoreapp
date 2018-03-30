@@ -7,15 +7,22 @@ $(function() {
 		$("#status").removeClass('status-ok');
 		
         e.preventDefault();
+		if($.trim($('#owner').val())==''||$.trim($('#cvv').val())=='')
+		{
+			$("#status").addClass("status-fail").html("Please enter mandatory items!");	
+		}
+		else{
+			$("#status").removeClass('status-fail');
+			var score=getRandomInt(500,1000);
+			$("#status").addClass("status-ok").html("CREDIT SCORE IS: "+(score));	
+		}
 		/*
 		var dt=$("#date").val();
 		var mth=$("#month").val();
 		var yr=$("#year").val();
 		var score=((dt+mth+Math.floor(yr/100))/2);
 		*/
-		var score=getRandomInt(500,1000);
-		$("#status").addClass("status-ok").html("CREDIT SCORE IS: "+(score));
-      
+		
     });
 });
 
